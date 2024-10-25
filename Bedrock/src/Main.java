@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String aWordToYourself = """
                
                 "For many actions, the best time to perform was 10 years ago, the second best time is NOW".
@@ -22,5 +22,18 @@ public class Main {
         System.out.println("TypeInferenceWithGenerics:");
         TypeInferenceWithGenerics.printTypeInferenceWithGenerics();
         System.out.println("------------------------------------\n");
+
+        /*
+        Java 11 Http client using new internal JDK httpClient
+         */
+        System.out.println("Http client using new internal JDK httpClient:");
+        Java11HttpClient.main(new String[0]);
+        System.out.println("------------------------------------\n");
+
+        /*
+        Java17 - Without using records, using a normal data carrier class
+         */
+        Java17Records.Employee myEmployee = new Java17Records.Employee("Neil", "Smith", 30);
+        System.out.println(myEmployee);
     }
 }
